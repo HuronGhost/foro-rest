@@ -18,7 +18,7 @@ return new class extends Migration
          $table->string('name')->nulleable();
          $table->string('email')->unique();
          $table->string('username')->unique();
-         $table->string('password-');
+         $table->string('password');
          $table->string('avatar')->default('https://thiscatdoesnotexist.com/');
          $table->enum('role',['admin','user'])->default('user');
          $table->timestamps();
