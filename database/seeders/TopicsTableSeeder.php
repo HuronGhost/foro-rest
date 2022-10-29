@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
 
 class TopicsTableSeeder extends Seeder
@@ -16,13 +17,11 @@ class TopicsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        $faker=Faker::create();
-        for($i=0; $i<10; $i++){
+        $faker = Faker::create();
+        for ($i = 0; $i < 10; $i++) {
             DB::table('topics')->insert([
-                'title'=> $faker->sentence,
-                'user_id'=>rand(1,11),
-                
+                'title' => $faker->sentence,
+                'user_id' => rand(1, 11),
             ]);
         }
     }
